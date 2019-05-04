@@ -1,0 +1,30 @@
+name: login
+description: A new Flutter project.
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.0
+  firebase_core: ^0.3.4  # add dependency for Firebase Core
+  firebase_analytics: ^1.0.4  # add dependency for Google Analytics for Firebase
+  firebase_auth: ^0.5.20
+  firebase_database: ^2.0.3  
+  cloud_firestore: ^0.10.1
+  firebase_storage: ^1.0.4
+  image_picker: ^0.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/logo.png
+    - assets/alucard.jpg
+  fonts:
+      - family: Nunito
+        fonts:
+          - asset: assets/Nunito.ttf
