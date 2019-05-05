@@ -39,7 +39,7 @@ class Home extends StatelessWidget {
     else return tourguidePage(snapshot);
   }
   
-  /*
+  
   Center adminPage(DocumentSnapshot snapshot){
     return Center(child: Text(snapshot.data['role']+'PAGE'));
   }
@@ -47,7 +47,7 @@ class Home extends StatelessWidget {
   Center tourguidePage(DocumentSnapshot snapshot){
     return Center(child: Text(snapshot.data['role']),);
   }
-  /*
+    
 
 
   
