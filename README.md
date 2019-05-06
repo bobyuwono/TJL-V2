@@ -1,7 +1,15 @@
-# Login UI
+# flutter_login_demo
 
-A clean and simple login UI screen with a basic hero animation in Flutter, a mobile sdk framework by Google.
+A sample Flutter project to show case user login and signup process with Firebase authentication. 
+It also shows how to perform CRUD operations with Firebase Real Time Database using simple todo list application.
 
-[Watch this video tutorial on Youtube](https://youtu.be/efbB8-x9T2c)
+## Medium
+Do spend sometime to read the article to complement the source code:
 
-![Login UI Flutter](https://raw.githubusercontent.com/putraxor/flutter-login-ui/master/art/thumbnail.png)
+https://medium.com/flutterpub/flutter-how-to-do-user-login-with-firebase-a6af760b14d5
+https://medium.com/@tattwei46/flutter-how-to-do-crud-with-firebase-rtdb-ce61e3ce53a
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).
