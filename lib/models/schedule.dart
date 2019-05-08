@@ -1,12 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
-///
-///
-///
-///
-///GAGALLL
-///
-///
-///
+
 class Schedule {
   String key;
   String subject;
@@ -14,13 +7,15 @@ class Schedule {
   String timestamp;
   String userId;
 
-  Schedule(this.subject, this.userId,this.timestamp, this.completed, );
+  Schedule(this.subject, this.userId, this.completed, this.timestamp);
 
   Schedule.fromSnapshot(DataSnapshot snapshot) :
     key = snapshot.key,
     userId = snapshot.value["userId"],
     subject = snapshot.value["subject"],
-    completed = snapshot.value["completed"];
+    completed = snapshot.value["completed"],
+    timestamp=snapshot.value["timestamp"];
+    
 
   toJson() {
     return {
