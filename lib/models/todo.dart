@@ -6,7 +6,6 @@ class Todo {
   String subject;
   bool completed;
   String userId;
-  String timestamp;
 
   Todo(this.subject, this.userId, this.completed);
 
@@ -14,8 +13,7 @@ class Todo {
     key = snapshot.key,
     userId = snapshot.value["userId"],
     subject = snapshot.value["subject"],
-    completed = snapshot.value["completed"],
-    timestamp=snapshot.value["timestamp"];
+    completed = snapshot.value["completed"];
     
 
   toJson() {
