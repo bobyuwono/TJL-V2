@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_demo/pages/dummy%20second%20route.dart';
+import 'package:flutter_login_demo/pages/page%20destinasi.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
@@ -27,7 +27,7 @@ List<Item> destinasi = List();
   @override
   void initState() {
     super.initState();
-    item = Item("", "","","","");
+    item = Item("", "","","","","","");
     final FirebaseDatabase database = FirebaseDatabase.instance; //Rather then just writing FirebaseDatabase(), get the instance.  
     itemRef = database.reference().child('destinasi');
     itemRef.onChildAdded.listen(_onEntryAdded);
@@ -72,7 +72,7 @@ List<Item> destinasi = List();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('biodata/destinasi'),
+        title: Text('input destinasi disini pal'),
         actions: <Widget>[
             new FlatButton(
                 child: new Text('Logout',
@@ -94,16 +94,25 @@ List<Item> destinasi = List();
                     ListTile(
                       leading: Icon(Icons.contacts),
                       title: TextFormField(
-                        initialValue: "",
+                        initialValue: "", 
                         onSaved: (val) => item.nama = val,
                         validator: (val) => val == "" ? val : null,
                       ),
                     ),
+                    
                     ListTile(
                       leading: Icon(Icons.contact_mail),
                       title: TextFormField(
                         initialValue: '',
                         onSaved: (val) => item.rating = val,
+                        validator: (val) => val == "" ? val : null,
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(Icons.contacts),
+                      title: TextFormField(
+                        initialValue: "",
+                        onSaved: (val) => item.kota = val,
                         validator: (val) => val == "" ? val : null,
                       ),
                     ),
@@ -131,6 +140,14 @@ List<Item> destinasi = List();
                         validator: (val) => val == "" ? val : null,
                       ),
                     ),
+                    ListTile(
+                      leading: Icon(Icons.contacts),
+                      title: TextFormField(
+                        initialValue: "",
+                        onSaved: (val) => item.harga = val,
+                        validator: (val) => val == "" ? val : null,
+                      ),
+                    ),
                     IconButton(
                       icon: Icon(Icons.send),
                       onPressed: () {
@@ -150,7 +167,9 @@ List<Item> destinasi = List();
                 return new ListTile(
                   leading: Icon(Icons.message),
                   title: Text(destinasi[index].nama),
-                  subtitle: Text(destinasi[index].rating),
+                  subtitle: Text(destinasi[index].rating, ),
+                  
+
                 );
               },
             ),
@@ -176,27 +195,34 @@ class Item {
   String key;
   String nama;
   String rating;
+  String kota;
   String maplink;
   String img;
   String deskripsi;
+  String harga;
 
-  Item(this.nama, this.rating, this.maplink,this.img,this.deskripsi);
+  Item(this.nama, this.rating,this.kota, this.maplink,this.img,this.deskripsi,this.harga);
 
   Item.fromSnapshot(DataSnapshot snapshot)
       : key = snapshot.key,
         nama = snapshot.value["nama"],
         rating = snapshot.value["rating"],
+        kota = snapshot.value["kota"],
         maplink = snapshot.value["maplink"],
         img=snapshot.value["img"],
-        deskripsi = snapshot.value["deskripsi"];
+        deskripsi = snapshot.value["deskripsi"],
+        harga = snapshot.value["harga"];
+
 
   toJson() {
     return {
       "nama": nama,
       "rating": rating,
+      "kota": kota,
       "maplink": maplink,
       "img": img,
       "deskripsi": deskripsi,
+      "harga": harga,
     };
   }
 }
